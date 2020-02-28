@@ -1,0 +1,6 @@
+---
+- name: update package
+  hosts: all
+  become: true
+  tasks:
+   - apt: update_cache=yes

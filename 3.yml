@@ -1,0 +1,6 @@
+---
+- name: Check Current User
+  hosts: all
+  tasks:
+   - name: Executing Who am i Command
+     raw: whoami > user ; cat user

@@ -1,0 +1,8 @@
+---
+- hosts: client2
+  tasks: 
+  - shell: cat /var/run/motd.dynamic
+    register: motd_content
+  - debug: msg="stdout={{motd_content}}" 
+  - debug: msg="MOTD is Empty"
+    when: motd_content.stdout == ""

@@ -1,0 +1,5 @@
+---
+- name: created for test
+  hosts: all
+  tasks:
+   - ping:

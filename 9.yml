@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: true
+  tasks: 
+  - shell: cat /var/run/motd.dynamic
+    register: motd_content
+  - debug: msg="stdout={{motd_content}}" 

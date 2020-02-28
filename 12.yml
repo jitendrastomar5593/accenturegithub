@@ -1,0 +1,8 @@
+---
+- hosts: client1
+  tasks:
+  - shell: cat /etc/motd
+    register: motd_contents
+  - debug: msg="stdout={{motd_contents}}"
+  - debug: msg="MOTD is Empty"
+    when: motd_contents.stdout == ""
